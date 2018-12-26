@@ -1,0 +1,51 @@
+<i-tabs current="{{ currentTab }}" color="#da7c0c" bindchange="swichNav">
+    <i-tab key="0" title="添加"></i-tab>
+    <i-tab key="1" title="生日"></i-tab>
+    <i-tab key="2" title="纪念日"></i-tab>
+</i-tabs>
+<view>
+  <view class="add-day" wx:if="{{currentTab*1 === 0}}">
+    <view class="row-view">
+      <button bindtap="addBirthday" class="btn-add">添加生日</button>
+    </view>
+    <view class="row-view">
+      <button bindtap="addMemorial" class="btn-add">添加纪念日</button>
+    </view>
+  </view>  
+  <view class="birthLists" wx:if="{{currentTab*1 === 1}}">
+    <view class='birthlist' wx:for="{{birthdayArray}}" wx:key="idx" wx:for-index="idx" wx:for-item="itemName" data-item="{{itemName}}" bindtap="birthChange">
+      <view class='info-1 info'>
+        <image class='imageBox' src="../../images/boy.png" mode="aspectFit" wx:if="{{itemName.sex === '男' && itemName.imgpath === ''}}"></image>
+        <image class='imageBox' src="../../images/girl.png" mode="aspectFit" wx:if="{{itemName.sex === '女' && itemName.imgpath === ''}}"></image>
+        <image class='imageBox' src="{{itemName.imgpath}}" mode="aspectFit" wx:if="{{itemName.imgpath !== ''}}"></image>
+        <text class="text">{{array[itemName.relation]}}</text>
+      </view>
+      <view class='info-2 info'>
+        <text class="text">{{itemName.name}}</text>
+        <text class="text">{{itemName.birthday}}</text>
+      </view>
+      <view class='info-3 info'>
+        <text class='text1'>{{itemName.nextBirthinday}}天</text>
+        <text class='text2'>后{{itemName.nextBirthinAge}}岁生日</text>
+        <text class='text3'>{{itemName.nextBirthinDate}}</text>
+      </view>
+    </view>
+  </view>  
+  <view class="memorialLists"  wx:if="{{currentTab*1 === 2}}">
+    <view class='memoriallist' wx:for="{{memorialArray}}" wx:key="idx" wx:for-index="idx" wx:for-item="itemName" data-item="{{itemName}}" bindtap="memoChange">
+      <view class='info-1 info'>
+        <image class='imageBox' src="../../images/date.png" mode="aspectFit"></image>
+      </view>
+      <view class='info-2 info'>
+        <text class="text">{{itemName.name}}</text>
+        <text class="text">{{itemName.memorial}}</text>
+      </view>
+      <view class='info-3 info'>
+        <text class='text1'>{{itemName.nextMemorialDay}}天</text>
+        <text class='text2'>后{{itemName.nextMemorialAge}}周年</text>
+        <text class='text3'>{{itemName.nextMemorialDate}}</text>
+      </view>
+    </view>
+  </view>
+</view>  
+<i-toast id="toast" />

@@ -1,0 +1,21 @@
+.userContent{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.userinfo{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding-top: 100rpx;
+}
+.userinfo-avatar{
+  width:100rpx;
+  height:100rpx;
+  margin:20rpx;
+  border-radius:50%;
+  background-size:cover;
+  background-color:white;
+}

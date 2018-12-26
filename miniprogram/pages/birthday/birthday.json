@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "添加生日",
+  "usingComponents": {
+    "dialog": "/components/Dialog/dialog"
+  }
+}

@@ -1,0 +1,53 @@
+/* miniprogram/pages/birthupdate/birthupdate.wxss */
+.section_gap{
+  width: calc(100% - 60rpx);
+  margin: 0 auto;
+  border-bottom: 2rpx solid #ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 140rpx;
+}
+.section_gap .section_input{
+  text-align: right;
+}
+.imageList{
+  width: 100%;
+  height: 250rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.imageList .imageBox{
+  width: 110rpx;
+  height: 110rpx;
+}
+.update-pic{
+  border: none;
+  font-size: 30rpx;
+  text-decoration: underline;
+}
+.section_gap .row-flex{
+  display: flex;
+}
+.radio-group label{
+  margin-right: 20rpx;
+}
+.section_gap .row-flex .picker{
+  width: 230rpx;
+}
+.btn-add{
+  width: calc(100% - 200rpx);
+  margin: 0 auto;
+  margin-top: 30rpx;
+  background: #fcb022;
+  color: #fff;
+}
+.btn-delete{
+  width: calc(100% - 200rpx);
+  margin: 0 auto;
+  margin-top: 30rpx;
+  border: 2rpx solid #fcb022;
+  color: #fcb022;
+}

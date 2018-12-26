@@ -1,0 +1,14 @@
+<view class='userContent'>
+  <view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{userInfo.avatarUrl}})"
+    ></button>
+    <text>{{userInfo.nickName}}</text>
+  </view>
+  <button wx:if="{{!userInfo.nickName}}" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">
+  获取用户信息
+</button>
+</view>

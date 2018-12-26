@@ -1,0 +1,22 @@
+
+@font-face {
+  font-family: 'comfont';  /* project id 559198 */
+  src: url('//at.alicdn.com/t/font_559198_jnhx7x1wnv.eot');
+  src: url('//at.alicdn.com/t/font_559198_jnhx7x1wnv.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_559198_jnhx7x1wnv.woff') format('woff'),
+  url('//at.alicdn.com/t/font_559198_jnhx7x1wnv.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_559198_jnhx7x1wnv.svg#comfont') format('svg');
+}
+
+.comfont {
+  font-family:"comfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shengrizhuanqub:before { content: "\e6d9"; }
+
+.icon-wo:before { content: "\e7ab"; }
+

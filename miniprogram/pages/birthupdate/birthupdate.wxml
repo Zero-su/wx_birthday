@@ -1,0 +1,64 @@
+<!--miniprogram/pages/birthupdate/birthupdate.wxml-->
+<form bindsubmit="formSubmit" binddelete="formDelete">
+  <view class="imageList">
+    <image class='imageBox' src="../../images/boy.png" mode="aspectFit" wx:if="{{info.sex === '男' && imgpath === ''}}"></image>
+    <image class='imageBox' src="../../images/girl.png" mode="aspectFit" wx:if="{{info.sex === '女' && imgpath === ''}}"></image>
+    <image class='imageBox' src="{{imgpath}}" mode="aspectFit" wx:if="{{imgpath !== ''}}"></image>
+    <rich-text nodes="修改图片" bindtap="gotoShow" class="update-pic"></rich-text>
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">姓名</view>
+    <input  name="name" class="section_input" value="{{info.name}}"/>
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">备注</view>
+    <input  name="note" class="section_input" value="{{info.note}}" placeholder="亲爱滴妈咪"/>
+  </view>
+  <view class="section section_gap">
+    <view class="sex">性别</view>
+    <radio-group name="sex"  class="radio-group section_input">
+      <label><radio color="#fcb022"  value="男" checked="{{info.sex === '男'}}"/>男</label>
+      <label><radio color="#fcb022"  value="女" checked="{{info.sex === '女'}}"/>女</label>
+    </radio-group>
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">生日</view>
+    <view class="section_input row-flex">
+      <radio-group name="calendar" class="radio-group">
+        <label><radio color="#fcb022"  value="0" checked="{{info.calendar === '0'}}"/>阴历</label>
+        <label><radio color="#fcb022"  value="1" checked="{{info.calendar === '1'}}"/>阳历</label>
+      </radio-group>
+      <picker mode="date" name="birthday" class="picker-date" value="{{info.birthday}}" bindchange="bindTimeChange">
+        <view class="picker">
+          {{date}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">关系</view>
+    <picker name="relation" class="section_input" value="{{info.relation}}" range="{{array}}" bindchange="bindPickerChange">
+      <view class="picker">
+        {{array[index]}}
+      </view>
+    </picker>
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">喜好</view>
+    <input  name="like" class="section_input" value='{{info.like}}' placeholder="爱打扮、爱看书"/>
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">是否提前通知我</view>
+    <radio-group name="isNotice" class="radio-group section_input">
+      <label><radio value="0" color="#fcb022"  checked="{{info.isNotice === '0'}}"/>是</label>
+      <label><radio value="1" color="#fcb022" checked="{{info.isNotice === '1'}}"/>否</label>
+    </radio-group>
+  </view>
+  <view class="button-area">
+    <button loading="{{loading}}"  class="btn-add" formType="submit"> 保存信息 </button>
+  </view>
+  <view class="button-area">
+    <button  class="btn-delete" bindtap="formDelete"> 删除信息 </button>
+  </view>
+  <i-toast id="toast" />
+</form>

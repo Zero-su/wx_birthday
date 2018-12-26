@@ -1,0 +1,35 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="section section_gap">
+    <view class="section__title">纪念日名称</view>
+    <input  name="name" class="section_input" placeholder="结婚纪念日" value="{{info.name}}"/>
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">纪念日日期</view>
+    <view class="section_input row-flex">
+      <picker mode="date" name="memorial" class="picker-date" value="{{date}}" bindchange="bindTimeChange">
+        <view class="picker">
+          {{date || '请选择日期'}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">备注</view>
+    <input  name="note" class="section_input" placeholder="给老婆" value="{{info.note}}"/>
+  </view>
+  <view class="section section_gap">
+    <view class="section__title">是否提前通知我</view>
+    <radio-group name="isNotice" class="radio-group section_input">
+      <label><radio value="0" color="#fcb022"  checked="{{info.isNotice*1 === 0}}"/>是</label>
+      <label><radio value="1" color="#fcb022" checked="{{info.isNotice*1 === 1}}"/>否</label>
+    </radio-group>
+  </view>
+  <view class="button-area">
+    <button loading="{{loading}}"  class="btn-add" formType="submit"> 保存信息 </button>
+  </view>
+  <view class="button-area">
+    <button  class="btn-delete" bindtap="formDelete"> 删除信息 </button>
+  </view>
+  <i-toast id="toast" />
+</form>
+
